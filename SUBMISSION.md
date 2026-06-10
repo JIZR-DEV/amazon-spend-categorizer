@@ -124,7 +124,10 @@ El archivo `privacy-policy.md` debe estar disponible en una URL publica antes de
 - Cualquier hosting estatico (Netlify, Vercel, etc.).
 
 ### Iconos
-Los iconos actuales en `src/icons/` son placeholders solidos naranja (#FF9900). Para publicacion real, reemplazalos por iconos de alta calidad antes de hacer el build y regenerar los zips.
+Iconos reales ya incluidos en `src/icons/` (16/48/128) y en los zips: marca de
+etiqueta de precio naranja con franjas de categoria, sin logo de Amazon. Version
+512 px para la ficha de la store en `marketing/icon-512.png`. Generador
+reproducible: `python marketing/make_icon.py`.
 
 ### Capturas de pantalla
 Ya generadas (1280x800, listas para subir) en `marketing/screenshots/`:
