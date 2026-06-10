@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="donate.css">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 620px; margin: 40px auto; padding: 0 16px; color: #1a1a2e; }
+    h1 { font-size: 24px; color: #232f3e; margin-bottom: 16px; }
+    h2 { font-size: 16px; color: #232f3e; margin: 20px 0 8px; }
+    p { line-height: 1.6; margin-bottom: 12px; color: #444; }
+    ol { padding-left: 24px; line-height: 1.8; color: #444; }
+    .privacy { background: #e8f5e9; border-left: 3px solid #4caf50; padding: 10px 14px; border-radius: 4px; margin: 16px 0; font-size: 13px; }
+    .disclaimer { margin-top: 28px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 11px; color: #999; line-height: 1.5; }
+  </style>
+  <title data-i18n="extName">Amazon Spend Categorizer — Welcome</title>
+</head>
+<body>
+  <h1 data-i18n="welcomeHeading">Thanks for installing!</h1>
+  <p data-i18n="extDescription">Categorize your Amazon purchases locally using keyword/ASIN rules and mark each item as deductible and business/personal, without sending anything to the cloud.</p>
+
+  <h2 data-i18n="welcomeHowTo">How to start</h2>
+  <ol>
+    <li data-i18n="welcomeStep1">Go to your Amazon order history and click the extension icon to read orders from the page.</li>
+    <li data-i18n="welcomeStep2">Or export your order history CSV from Amazon and import it with the "Import CSV" button.</li>
+  </ol>
+
+  <div class="privacy">
+    <p data-i18n="welcomePrivacyNote">Your purchase data never leaves your device. Categorization rules can optionally sync across your devices.</p>
+  </div>
+
+  <section class="donate">
+    <p class="donate-heading" data-i18n="donateHeading">Support this project</p>
+    <a class="donate-btn paypal" href="https://www.paypal.com/paypalme/JIZRxxx" target="_blank" rel="noopener noreferrer" data-i18n="donatePaypal">Donate with PayPal</a>
+    <a class="donate-btn kofi" href="https://ko-fi.com/jizr_dev" target="_blank" rel="noopener noreferrer" data-i18n="donateKofi">Support me on Ko-fi</a>
+  </section>
+
+  <p class="disclaimer" data-i18n="notAffiliated">Not affiliated with, endorsed by, or sponsored by Amazon. Amazon and all related marks are trademarks of Amazon.com, Inc. or its affiliates.</p>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

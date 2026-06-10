@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  html,body{margin:0;padding:0}
+  .stage{width:1280px;height:800px;box-sizing:border-box;
+    background:linear-gradient(135deg,#15202e 0%,#243447 55%,#34465a 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:44px;
+    font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#e8edf2;
+    border:1px solid rgba(255,255,255,.16);padding:7px 15px;border-radius:999px;font-size:13px;font-weight:600}
+  .headline{color:#fff;font-size:29px;font-weight:750;text-align:center;max-width:940px;line-height:1.18;letter-spacing:-.01em}
+  .headline .accent{color:#ff9900}
+  .device{border-radius:13px;overflow:hidden;background:#f8f9fa;
+    box-shadow:0 30px 72px rgba(0,0,0,.46),0 0 0 1px rgba(255,255,255,.06)}
+  iframe{border:0;display:block}
+</style></head><body>
+  <div class="stage">
+    <div class="chip">🔒 100% on-device · no servers</div>
+    <div class="headline">Every order, <span class="accent">categorized automatically</span></div>
+    <div class="device"><iframe src="_inner/popup-categorized.html" width="700" height="540" scrolling="no"></iframe></div>
+  </div>
+</body></html>

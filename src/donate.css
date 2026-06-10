@@ -1,0 +1,11 @@
+.donate { display: flex; gap: 8px; padding: 12px; flex-wrap: wrap; }
+.donate-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font: 14px system-ui, sans-serif;
+  color: #fff;
+}
+.donate-btn.paypal { background: #0070ba; }
+.donate-btn.kofi { background: #ff5e5b; }

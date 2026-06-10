@@ -1,0 +1,47 @@
+# Amazon Spend Categorizer
+
+Categorize your Amazon purchases locally using keyword/ASIN rules and mark each item as deductible and business/personal — without sending anything to the cloud.
+
+## Features (v0.1.0)
+- Import the Amazon order history CSV (File > "Download order history")
+- Read orders directly from the Amazon order history page (DOM scraping via activeTab)
+- Keyword and ASIN-based rules engine — auto-categorizes items
+- Editable columns per row: category, subcategory, deductible (yes/no), business/personal
+- Monthly aggregated spend summary by category
+- Re-export enriched CSV with all columns including fiscal flags
+- CRUD rules editor in Options (add/edit/delete, import/export ruleset as JSON)
+- Optional sync of rules (not purchase data) via browser.storage.sync
+- 6 languages: EN, ES, PT, FR, DE, IT
+
+## Privacy
+All purchase data stays on your device. No network requests are made. Only categorization rules can optionally sync across your own devices if you explicitly enable it in Options. See `privacy-policy.md`.
+
+## Build
+
+```bash
+npm install
+node build/build.mjs
+```
+
+Outputs:
+- `dist/chrome/` — load at `chrome://extensions` (Developer mode > Load unpacked)
+- `dist/firefox/` — load at `about:debugging#/runtime/this-firefox` (Load Temporary Add-on > select manifest.json)
+
+## Manifest convention
+`src/` contains two manifest source files:
+- `manifest.chrome.json` — uses `background.service_worker` + `options_page`
+- `manifest.firefox.json` — uses `background.scripts` + `options_ui.page` + `browser_specific_settings.gecko`
+
+The build script copies the appropriate one as `manifest.json` into each `dist/` folder. All other source files are identical and shared.
+
+## Adding real icons
+Replace the placeholder PNGs in `src/icons/` (16.png, 48.png, 128.png) with your real icons before publishing. The placeholders are solid orange (#FF9900) squares.
+
+## Disclaimer
+This is an independent, third-party tool. It is **not affiliated with, endorsed by, or sponsored by Amazon**. "Amazon" and all related marks are trademarks of Amazon.com, Inc. or its affiliates. The extension only reads order data already visible in your own logged-in Amazon account, locally in your browser.
+
+## Permissions justification
+- `storage` — ruleset and per-item flags in storage.local; optional ruleset sync in storage.sync
+- `downloads` — re-export enriched CSV via browser.downloads
+- `activeTab` — read order history DOM only when user clicks (no broad host_permissions)
+- `host_permissions`: empty — content_scripts cover Amazon domains via `matches`

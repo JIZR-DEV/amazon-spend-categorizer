@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <title data-i18n="popupTitle">Amazon Spend Categorizer</title>
+</head>
+<body>
+  <header>
+    <h1 data-i18n="extName">Amazon Spend Categorizer</h1>
+    <div class="header-actions">
+      <a href="options.html" target="_blank" data-i18n-title="optionsTitle" id="options-link">&#9881;</a>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <!-- Input file oculto para CSV -->
+    <input type="file" id="csv-file-input" accept=".csv" style="display:none">
+    <button class="btn btn-primary" id="btn-import-csv" data-i18n="btnImportCsv">Import CSV</button>
+    <button class="btn" id="btn-read-orders" data-i18n="btnReadOrders">Read page orders</button>
+    <button class="btn btn-export" id="btn-export" disabled data-i18n="btnExport">Export CSV</button>
+  </div>
+
+  <div id="status-bar" role="status" aria-live="polite"></div>
+
+  <section class="summary-section" id="summary-section" hidden>
+    <h2 data-i18n="summaryMonthlyHeading">Monthly summary</h2>
+    <div id="summary-table-wrap"></div>
+  </section>
+
+  <section class="items-section">
+    <div id="items-table-wrap">
+      <div class="empty-state" id="empty-state" data-i18n="valueUncategorized">Import a CSV or read orders from an Amazon page.</div>
+    </div>
+  </section>
+
+  <section class="donate">
+    <p class="donate-heading" data-i18n="donateHeading">Support this project</p>
+    <a class="donate-btn paypal" href="https://www.paypal.com/paypalme/JIZRxxx" target="_blank" rel="noopener noreferrer" data-i18n="donatePaypal">Donate with PayPal</a>
+    <a class="donate-btn kofi" href="https://ko-fi.com/jizr_dev" target="_blank" rel="noopener noreferrer" data-i18n="donateKofi">Support me on Ko-fi</a>
+  </section>
+
+  <p class="disclaimer" data-i18n="notAffiliated">Not affiliated with, endorsed by, or sponsored by Amazon. Amazon and all related marks are trademarks of Amazon.com, Inc. or its affiliates.</p>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+  <script src="lib/papaparse.min.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="lib/rules-engine.js"></script>
+  <script src="lib/aggregate.js"></script>
+  <script src="lib/csv-parse.js"></script>
+  <script src="lib/csv-export.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="options.css">
+  <title data-i18n="optionsTitle">Options — Amazon Spend Categorizer</title>
+</head>
+<body>
+  <h1 data-i18n="optionsTitle">Options</h1>
+
+  <!-- Rules editor -->
+  <section class="section-card">
+    <h2 data-i18n="rulesHeading">Categorization Rules</h2>
+
+    <div id="rule-form" hidden>
+      <h3 id="rule-form-title" data-i18n="ruleAddBtn">Add rule</h3>
+      <div class="form-row">
+        <div class="form-field">
+          <label data-i18n="ruleKeyword">Keyword</label>
+          <input type="text" id="rf-keyword" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label data-i18n="ruleAsin">ASIN</label>
+          <input type="text" id="rf-asin" autocomplete="off" placeholder="B0XXXXXXXXX">
+        </div>
+        <div class="form-field">
+          <label data-i18n="ruleCategory">Category</label>
+          <input type="text" id="rf-category" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label data-i18n="ruleSubcategory">Subcategory</label>
+          <input type="text" id="rf-subcategory" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label data-i18n="rulePriority">Priority</label>
+          <input type="number" id="rf-priority" min="1" max="999" value="50">
+        </div>
+        <div class="form-field">
+          <label data-i18n="colDeductible">Deductible</label>
+          <select id="rf-deductible">
+            <option value="">-</option>
+            <option value="yes" data-i18n="valueDeductibleYes">Yes</option>
+            <option value="no" data-i18n="valueDeductibleNo">No</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label data-i18n="colBusinessPersonal">Business/Personal</label>
+          <select id="rf-biz">
+            <option value="">-</option>
+            <option value="business" data-i18n="valueBusiness">Business</option>
+            <option value="personal" data-i18n="valuePersonal">Personal</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" id="rf-save" data-i18n="ruleSaveBtn">Save</button>
+        <button class="btn" id="rf-cancel">Cancel</button>
+      </div>
+      <input type="hidden" id="rf-editing-id">
+    </div>
+
+    <div class="rules-toolbar">
+      <button class="btn btn-primary" id="btn-add-rule" data-i18n="ruleAddBtn">+ Add rule</button>
+      <button class="btn" id="btn-import-ruleset" data-i18n="rulesetImport">Import ruleset JSON</button>
+      <button class="btn" id="btn-export-ruleset" data-i18n="rulesetExport">Export ruleset JSON</button>
+      <input type="file" id="ruleset-file-input" accept=".json" style="display:none">
+    </div>
+
+    <div id="rules-table-wrap">
+      <table class="rules-table" id="rules-table">
+        <thead>
+          <tr>
+            <th data-i18n="rulePriority">Priority</th>
+            <th data-i18n="ruleKeyword">Keyword</th>
+            <th data-i18n="ruleAsin">ASIN</th>
+            <th data-i18n="ruleCategory">Category</th>
+            <th data-i18n="ruleSubcategory">Subcategory</th>
+            <th data-i18n="colDeductible">Deductible</th>
+            <th data-i18n="colBusinessPersonal">Biz/Personal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rules-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Sync settings -->
+  <section class="section-card">
+    <h2 data-i18n="syncRulesetToggle">Ruleset Sync</h2>
+    <div class="sync-row">
+      <input type="checkbox" id="sync-consent-chk">
+      <div class="sync-label">
+        <strong data-i18n="syncRulesetToggle">Sync ruleset across devices</strong>
+        <small data-i18n="syncRulesetConsent">Only your categorization rules will sync — never your purchase data.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy note -->
+  <section class="section-card">
+    <p data-i18n="privacyNoDataLeaves">All your purchase data stays on your device. Only rules can optionally sync.</p>
+  </section>
+
+  <div id="status-msg"></div>
+
+  <section class="donate">
+    <p class="donate-heading" data-i18n="donateHeading">Support this project</p>
+    <a class="donate-btn paypal" href="https://www.paypal.com/paypalme/JIZRxxx" target="_blank" rel="noopener noreferrer" data-i18n="donatePaypal">Donate with PayPal</a>
+    <a class="donate-btn kofi" href="https://ko-fi.com/jizr_dev" target="_blank" rel="noopener noreferrer" data-i18n="donateKofi">Support me on Ko-fi</a>
+  </section>
+
+  <p class="disclaimer" data-i18n="notAffiliated">Not affiliated with, endorsed by, or sponsored by Amazon. Amazon and all related marks are trademarks of Amazon.com, Inc. or its affiliates.</p>
+
+  <script src="browser-polyfill.js"></script>
+  <script src="i18n.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="lib/rules-engine.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

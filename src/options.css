@@ -1,0 +1,237 @@
+/* options.css */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: #1a1a2e;
+  background: #f8f9fa;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #232f3e;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #ff9900;
+  padding-bottom: 8px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #232f3e;
+  margin: 24px 0 12px;
+}
+
+.section-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 14px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  transition: background 0.15s;
+}
+
+.btn:hover { background: #f0f0f0; }
+
+.btn-primary {
+  background: #ff9900;
+  border-color: #e88a00;
+  color: #111;
+}
+.btn-primary:hover { background: #e88a00; }
+
+.btn-danger {
+  background: #fff;
+  border-color: #c62828;
+  color: #c62828;
+}
+.btn-danger:hover { background: #fff0f0; }
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.rules-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.rules-table th {
+  background: #232f3e;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.rules-table td {
+  border-bottom: 1px solid #eee;
+  padding: 5px 8px;
+  vertical-align: middle;
+}
+
+.rules-table tr:hover td { background: #fffbe6; }
+
+.rules-table td input, .rules-table td select {
+  width: 100%;
+  font-size: 12px;
+  padding: 3px 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+#rule-form {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 6px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+#rule-form h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #232f3e;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1 1 120px;
+}
+
+.form-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.form-field input, .form-field select {
+  padding: 5px 7px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sync-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 0;
+}
+
+.sync-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.sync-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sync-label strong {
+  font-size: 13px;
+}
+
+.sync-label small {
+  font-size: 11px;
+  color: #777;
+}
+
+#status-msg {
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  margin-top: 8px;
+  display: none;
+}
+
+.donate {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.donate-heading {
+  font-size: 13px;
+  color: #888;
+  flex: 1 0 100%;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #fff;
+}
+
+.donate-btn.paypal { background: #0070ba; }
+.donate-btn.kofi { background: #ff5e5b; }
+
+.disclaimer {
+  margin-top: 24px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #999;
+  text-align: center;
+}
